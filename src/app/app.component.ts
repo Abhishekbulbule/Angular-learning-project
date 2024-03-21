@@ -10,10 +10,7 @@ import { HomeComponent } from './home/home.component';
   <main>
     <header class="brand-name">
       <a routerLink=""><img class="brand-logo" src="/favicon.ico" alt="logo" aria-hidden="true"> 
-      <h1 class="m-5" routerLink="">Angular Project</h1></a>
-      <a [routerLink]="['details', 2]" >
-        <h1>Details</h1>
-      </a>
+      <h1 class="m-5" routerLink="">Hotels && Homes</h1></a>
     </header>
     <section class="content">
       <router-outlet></router-outlet>
@@ -21,7 +18,6 @@ import { HomeComponent } from './home/home.component';
   </main>
 
 `,
-  // templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {

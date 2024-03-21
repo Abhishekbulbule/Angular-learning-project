@@ -20,13 +20,6 @@ export class HousingService {
     const data = await fetch(`${this.url}/${id}`);
     return await data.json()??{};
   }
-  // getAllHousingLocations(): HousingLocation[] {
-  //   return this.housingLocationList;
-  // }
-
-  // getHousingLocationById(id: number): HousingLocation | undefined {
-  //   return this.housingLocationList.find(housingLocation => housingLocation.id === id);
-  // }
 
   submitApplication(firstName:string, lastName:string, email:string):string{
     let text :string = `Homes application received: firstName: ${firstName}, lastName: ${lastName}, email: ${email}.`;
