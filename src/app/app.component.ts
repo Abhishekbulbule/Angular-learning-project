@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Component,inject } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { CommonModule, JsonPipe, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,HomeComponent,RouterLink],
+  imports: [RouterOutlet,HomeComponent,RouterLink, HttpClientModule, JsonPipe, NgFor, CommonModule],
   template: `
   <main>
     <header class="brand-name">
@@ -13,6 +15,8 @@ import { HomeComponent } from './home/home.component';
       <h1 class="m-5" routerLink="">Hotels && Homes</h1></a>
     </header>
     <section class="content">
+      <!-- <p *ngFor="let item of data">{{item.name}}</p> 
+      {{data}} -->
       <router-outlet></router-outlet>
     </section>
   </main>
@@ -21,5 +25,7 @@ import { HomeComponent } from './home/home.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'first-app';
+  title = 'first-app'; 
 }
+
+

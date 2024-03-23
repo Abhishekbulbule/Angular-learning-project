@@ -4,11 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 import { HousingService } from '../housing.service';
 import { HousingLocation } from '../housinglocation';
 import { FormsModule, FormGroup, ReactiveFormsModule, FormControl } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, HttpClientModule],
   // templateUrl: './details.component.html',
   template: `
   <article>
@@ -59,9 +60,7 @@ export class DetailsComponent {
   formSub = '';
   constructor(){
     const housingLocationId = Number(this.route.snapshot.params['id']);
-    this.HousingService.getHousingLocationById(housingLocationId).then((housingLocation)=>{
-      this.housingLocation = housingLocation;
-    });
+    this.housingLocation=this.HousingService.getHousingLocationById(housingLocationId);
   }
 
   submitApplication(){

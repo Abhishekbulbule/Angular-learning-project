@@ -3,11 +3,12 @@ import { HousingLocationComponent } from "../housing-location/housing-location.c
 import { HousingLocation } from '../housinglocation';
 import { CommonModule, NgFor } from '@angular/common';
 import { HousingService } from '../housing.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,HousingLocationComponent, NgFor],
+  imports: [CommonModule,HousingLocationComponent, NgFor, HttpClientModule],
   template: `
   <section>
     <form>
@@ -37,9 +38,11 @@ export class HomeComponent {
   }
 
   constructor(){
-    this.housingService.getAllHousingLocations().then((housingLocationList:HousingLocation[])=>{
-      this.housingLocationList = housingLocationList;
-      this.filteredLocationList = housingLocationList;
-    });
+    this.housingLocationList=this.housingService.getAllData();
+    this.filteredLocationList=this.housingService.getAllData();
+    // this.housingService.getAllHousingLocations().then((housingLocationList:HousingLocation[])=>{
+    //   this.housingLocationList = housingLocationList;
+    //   this.filteredLocationList = housingLocationList;
+    // });
   }
 }
