@@ -13,10 +13,9 @@ import { CommonModule, JsonPipe, NgFor } from '@angular/common';
     <header class="brand-name">
       <a routerLink=""><img class="brand-logo" src="/favicon.ico" alt="logo" aria-hidden="true"> 
       <h1 class="m-5" routerLink="">Hotels && Homes</h1></a>
+      <a [routerLink]="'/heroes'"><h1 class="m-5">Owners</h1></a>
     </header>
     <section class="content">
-      <!-- <p *ngFor="let item of data">{{item.name}}</p> 
-      {{data}} -->
       <router-outlet></router-outlet>
     </section>
   </main>

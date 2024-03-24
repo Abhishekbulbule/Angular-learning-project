@@ -1,7 +1,6 @@
 import { Component, Input, input } from '@angular/core';
 import { HousingLocation } from '../housinglocation';
 import { RouterLink } from '@angular/router';
-import { Router } from 'express';
 
 @Component({
   selector: 'app-housing-location',
