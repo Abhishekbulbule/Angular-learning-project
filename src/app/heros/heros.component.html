@@ -1,7 +1,14 @@
 <h1>{{title}}</h1>
-<h2>{{owner.name|uppercase}} Details</h2>
-<div><span>id: </span>{{owner.id}}</div>
-<div>
-    <label for="name">Hero name: </label>
-    <input id="name" [(ngModel)]="owner.name" placeholder="name">
-</div>
+<span>
+    <ul class="heroes">
+        <li *ngFor="let owner of owners">
+          <button type="button" [class.selected]="owner === selectedOwner" (click)="onSelect(owner)">
+            <span class="badge">{{owner.id}}</span>
+            <span class="name">{{owner.name}}</span>
+          </button>
+        </li>
+      </ul>
+</span>
+
+<app-heros-details [owner]="selectedOwner"></app-heros-details>
+<app-messages></app-messages>
