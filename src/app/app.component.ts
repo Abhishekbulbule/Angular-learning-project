@@ -1,5 +1,5 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component,inject } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { Component} from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CommonModule, JsonPipe, NgFor } from '@angular/common';
@@ -13,7 +13,7 @@ import { CommonModule, JsonPipe, NgFor } from '@angular/common';
     <header class="brand-name">
       <a routerLink=""><img class="brand-logo" src="/favicon.ico" alt="logo" aria-hidden="true"> 
       <h1 class="m-5" routerLink="">Hotels && Homes</h1></a>
-      <a [routerLink]="'/heroes'"><h1 class="m-5">Owners</h1></a>
+      <a [routerLink]="'/dashboard'"><h1 class="m-5">Owners App</h1></a>
     </header>
     <section class="content">
       <router-outlet></router-outlet>

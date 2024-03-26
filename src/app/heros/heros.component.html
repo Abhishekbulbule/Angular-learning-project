@@ -1,14 +1,10 @@
 <h1>{{title}}</h1>
 <span>
-    <ul class="heroes">
-        <li *ngFor="let owner of owners">
-          <button type="button" [class.selected]="owner === selectedOwner" (click)="onSelect(owner)">
-            <span class="badge">{{owner.id}}</span>
-            <span class="name">{{owner.name}}</span>
-          </button>
-        </li>
-      </ul>
+  <ul class="heroes">
+    <li *ngFor="let owner of owners">
+      <a [routerLink]="['/detail', owner.id]">
+        <span class="badge">{{owner.id}}</span> {{owner.name}}
+      </a>
+    </li>
+  </ul>
 </span>
-
-<app-heros-details [owner]="selectedOwner"></app-heros-details>
-<app-messages></app-messages>

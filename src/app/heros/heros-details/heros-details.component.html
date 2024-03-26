@@ -1,10 +1,10 @@
-<div *ngIf="owner">
-
-    <h2>{{owner.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{owner.id}}</div>
-    <div>
-      <label for="hero-name">Hero name: </label>
-      <input id="hero-name" [(ngModel)]="owner.name" placeholder="name">
-    </div>
-  
+<div *ngIf="own">
+  <h2>{{own.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{own.id}}</div>
+  <div>
+    <label for="hero-name">Owner name: </label>
+    <input id="hero-name" [(ngModel)]="own.name" placeholder="Owner name"/>
   </div>
+  <button type="button" (click)="goBack()">Go back</button>
+</div>
+<app-messages></app-messages>
